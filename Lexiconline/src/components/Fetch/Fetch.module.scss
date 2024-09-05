@@ -1,12 +1,21 @@
 @import '../../assets/helper/Helper.scss';
 
 .DictionaryContainer{
-    width: 60vw;
-    height: 60vh;
+    width: 70rem;
+    padding: 2rem 1rem ;
     background-color: $white;
     border-radius: 8px;
     margin: auto;
     filter: drop-shadow(0 0 0.2rem rgb(207, 207, 207));
+
+    .searchedWord{
+        text-align: center;
+        padding: 1rem;
+        font-size: 48px;
+        font-family: Karma;
+        font-weight: 200;
+        color: $green;
+    }
     .UpperStyle{
         display: grid;
         grid-template-columns: 1fr 1fr;
