@@ -1,0 +1,45 @@
+@import '../../assets/helper/Helper.scss';
+
+
+.searchContainer{
+    margin: auto;
+    margin-top: -4rem;
+    width: 50vw;
+    background-color: $pearl;
+    border-radius: 8px;
+    padding-bottom: 3rem;
+    z-index: 99;
+    h3{
+        font-family: Karla;
+        font-size: 32px;
+        font-weight: 200;
+        color: $dark-grey;
+        text-align: center;
+        padding: 2rem;
+    }
+    .searchStyle {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        padding: 1px;
+        width: 25rem;
+        margin: auto;
+    
+        input {
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            border: solid 1px $green;
+            padding: 1rem;
+            width: 100%;
+        }
+        button {
+            border:1px solid $green;
+            padding: 1rem;
+            background:$green;
+            color:white;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+          }
+    }
+}
+

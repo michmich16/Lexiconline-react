@@ -1,0 +1,25 @@
+@import '../../assets/helper/Helper.scss';
+
+
+header {
+    background-image: url('../../assets/images/header.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 25rem;
+
+    div {
+        display: flex;
+        justify-content: center;
+        margin-top: 5rem;
+
+        h1 {
+            color: white;
+            font-family: Marck Script;
+            font-size: 100px;
+            font-weight: 200;
+            filter: drop-shadow(0 0 0.2rem rgb(130, 130, 130));
+        }
+    }
+}

@@ -1,0 +1,54 @@
+@import '../../assets/helper/Helper.scss';
+
+.DictionaryContainer{
+    width: 60vw;
+    height: 60vh;
+    background-color: $white;
+    border-radius: 8px;
+    margin: auto;
+    filter: drop-shadow(0 0 0.2rem rgb(207, 207, 207));
+    .UpperStyle{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: solid 1px black;
+        padding: 2rem;
+        gap: 1rem;
+        p{
+            padding: 1rem 2rem;
+        }
+    }
+    .MiddleStyle{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: solid 1px black;
+        padding: 2rem;
+        gap: 1rem;
+    }
+    .LowerStyle{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 2rem;
+        gap: 1rem;
+    }
+
+    .WelcomeText{
+        text-align: center;
+        h2{
+            font-family: Marck Script;
+            color: $green;
+            font-size: 32px;
+        }
+        p{
+            font-family: Karla;
+        }
+    }
+
+    .apiNotFound{
+        text-align: center;
+    }
+    
+    .WordLoading{
+        text-align: center;
+    }
+}
+

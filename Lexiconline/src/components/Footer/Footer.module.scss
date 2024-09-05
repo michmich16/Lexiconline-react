@@ -1,0 +1,17 @@
+@import '../../assets/helper/Helper.scss';
+
+footer{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: $green;
+    color: $white;
+    padding: 1rem;
+    gap: 2rem;
+    text-align: center;
+    div{
+        li{
+            list-style: none;
+        }
+    }
+}
