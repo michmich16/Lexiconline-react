@@ -1,14 +1,31 @@
 @import '../../assets/helper/Helper.scss';
 
-.DictionaryContainer{
-    width: 70rem;
-    padding: 2rem 1rem ;
+.DictionaryContainer {
+    width: 70vw;
+    padding: 2rem 1rem;
     background-color: $white;
     border-radius: 8px;
     margin: auto;
     filter: drop-shadow(0 0 0.2rem rgb(207, 207, 207));
+    margin-bottom: 5rem;
 
-    .searchedWord{
+    .dictionaryStyle {
+        border-bottom: solid 1px black;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        &:nth-last-child(1) {
+            border-bottom: none;
+        }
+
+        div {
+            padding: 2rem 0;
+        }
+    }
+
+
+    .searchedWord {
         text-align: center;
         padding: 1rem;
         font-size: 48px;
@@ -16,48 +33,39 @@
         font-weight: 200;
         color: $green;
     }
-    .UpperStyle{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        border-bottom: solid 1px black;
-        padding: 2rem;
-        gap: 1rem;
-        p{
-            padding: 1rem 2rem;
-        }
-    }
-    .MiddleStyle{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        border-bottom: solid 1px black;
-        padding: 2rem;
-        gap: 1rem;
-    }
-    .LowerStyle{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding: 2rem;
-        gap: 1rem;
-    }
 
-    .WelcomeText{
-        text-align: center;
-        h2{
-            font-family: Marck Script;
-            color: $green;
-            font-size: 32px;
-        }
-        p{
-            font-family: Karla;
-        }
-    }
-
-    .apiNotFound{
+    .apiNotFound {
         text-align: center;
     }
-    
-    .WordLoading{
+
+    .WordLoading {
         text-align: center;
     }
 }
 
+
+@media only screen and (max-width: 1100px) {
+    .DictionaryContainer {
+        width: 40rem;
+        padding: 1rem 1rem;
+
+        .dictionaryStyle {
+            div {
+                padding: 2rem 0;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .DictionaryContainer {
+        width: 20rem;
+        padding: 1rem 1rem;
+
+        p {
+            font-size: 14px;
+            padding: 0.5rem 0;
+        }
+    }
+}

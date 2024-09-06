@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import style from './Navigation.module.scss';
 import { useState, useEffect } from 'react';
 
@@ -17,9 +17,9 @@ export const Navigation = () => {
         <>
             <nav>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">API</a></li>
+                    <li><NavLink to={'/'}>Home</NavLink></li>
+                    <li><NavLink to={'/about'}>About</NavLink></li>
+                    <li><NavLink to={'#'}>API</NavLink></li>
                 </ul>
             </nav>
                 {/* <div>

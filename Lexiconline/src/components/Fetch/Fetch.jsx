@@ -5,48 +5,30 @@ export const Fetch = ({ searchWord }) => {
     const [apiData, setApiData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [hasSearched, setHasSearched] = useState(false); // Track if the user has searched
 
     const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchWord}`;
 
-    async function fetchData() {
+    const fetchData = async () => {
         setLoading(true);
-        setError(null);  // Reset error state
+        setError(null);
         try {
-            let res = await fetch(url);
-            if (!res.ok) {
-                throw new Error('Network response was not ok');
-            }
-            let data = await res.json();
+            const res = await fetch(url);
+            if (!res.ok) throw new Error('Network response was not ok');
+            const data = await res.json();
             setApiData(data);
-        } catch (error) {
-            console.error('Fetch error:', error);
-            setApiData(null);  // Set to null in case of an error
-            setError(<main className={style.DictionaryContainer}>
-                <div className={style.apiNotFound}><p>API Not found</p></div>
-            </main>);
+        } catch {
+            setError('Not found');
+            setApiData(null);
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
-    }
+    };
 
     useEffect(() => {
-        if (searchWord) {
-            setHasSearched(true); // Mark that the user has searched
-            fetchData();
-        }
+        if (searchWord) fetchData();
     }, [searchWord]);
 
-    // If there's no searchWord or user has not searched yet
-    if (!hasSearched && !searchWord) {
-        return <>
-            <main className={style.DictionaryContainer}>
-                <div className={style.WelcomeText}>
-                    <h2>Lexiconline Dictionary</h2>
-                    <p>English is (not) fun!</p>
-                </div>
-            </main>
-        </>
-    }
+    if (!searchWord) return null;
 
     if (loading) {
         return (
@@ -57,58 +39,45 @@ export const Fetch = ({ searchWord }) => {
     }
 
     if (error) {
-        return <>
-            <main className={style.DictionaryContainer}><p>{error}</p></main>;
-        </>
-
-    }
-
-    if (!apiData) {
         return (
             <main className={style.DictionaryContainer}>
-                <div className={style.apiNotFound}><p>API Data not found</p></div>
+                <div className={style.apiNotFound}><p>{error}</p></div>
             </main>
-
         );
     }
+
+    if (!apiData) return null;
 
     const wordData = apiData[0];
 
     return (
         <main className={style.DictionaryContainer}>
-                <h3 className={style.searchedWord}>{searchWord}</h3>
-            <section className={style.UpperStyle}>
-                <div>
-                    <h4>{wordData.meanings?.[0]?.partOfSpeech || ''}</h4>
-                    <p>{wordData.meanings?.[0]?.definitions?.[0]?.definition || ''}</p>
-                </div>
-                <div>
-                    <h5>Synonyms:</h5>
-                    <p>{wordData.meanings?.[0]?.synonyms?.[0] || ''}</p>
-                </div>
-            </section>
-
-            <section className={style.MiddleStyle}>
-                <div>
-                    <h4>{wordData.meanings?.[1]?.partOfSpeech || ''}</h4>
-                    <p>{wordData.meanings?.[1]?.definitions?.[0]?.definition || ''}</p>
-                </div>
-            </section>
-
-            <section className={style.LowerStyle}>
-                <div>
-                    <h4>{wordData.meanings?.[2]?.partOfSpeech || ''}</h4>
-                    <p> {wordData.meanings?.[2]?.definitions?.[0]?.definition || ''}</p>
-                    <p> {wordData.meanings?.[2]?.definitions?.[1]?.definition || ''}</p>
-                    <p> {wordData.meanings?.[2]?.definitions?.[2]?.definition || ''}</p>
-                </div>
-                <div>
-                    <h5>Example:</h5>
-                    <p> {wordData.meanings?.[2]?.definitions?.[0]?.example || ''}</p>
-                    <p> {wordData.meanings?.[2]?.definitions?.[1]?.example || ''}</p>
-                    <p> {wordData.meanings?.[2]?.definitions?.[2]?.example || ''}</p>
-                </div>
-            </section>
+            <h3 className={style.searchedWord}>{searchWord}</h3>
+            {wordData.meanings && wordData.meanings.map((meaning, index) => (
+                <section key={index} className={style.dictionaryStyle}>
+                    <div>
+                        <h4>{meaning.partOfSpeech || ''}</h4>
+                        <p>{meaning.definitions?.[0]?.definition || ''}</p>
+                        {meaning.definitions?.slice(1).map((def, idx) => (
+                            <p key={idx}>{def.definition || ''}</p>
+                        ))}
+                    </div>
+                    {meaning.partOfSpeech === 'noun' && meaning.synonyms && meaning.synonyms.length > 0 && (
+                        <div>
+                            <h5>Synonyms:</h5>
+                            <p>{meaning.synonyms.join(', ')}</p>
+                        </div>
+                    )}
+                    {meaning.definitions.some(def => def.example) && (
+                        <div>
+                            <h5>Examples:</h5>
+                            {meaning.definitions.map((def, idx) => (
+                                def.example && <p key={idx}>{def.example}</p>
+                            ))}
+                        </div>
+                    )}
+                </section>
+            ))}
         </main>
     );
 };
