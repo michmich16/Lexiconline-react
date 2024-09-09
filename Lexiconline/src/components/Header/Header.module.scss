@@ -1,8 +1,9 @@
 @import '../../assets/helper/Helper.scss';
 
 
+
 header {
-    background-image: url('../../assets/images/header.jpeg');
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), url('../../assets/images/header.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -12,7 +13,7 @@ header {
     div {
         display: flex;
         justify-content: center;
-        margin-top: 5rem;
+        margin-top: 8rem;
 
         h1 {
             color: white;

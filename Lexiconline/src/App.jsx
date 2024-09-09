@@ -7,7 +7,7 @@ import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { Fetch } from './components/Fetch/Fetch';
 import { Home } from './pages/HomePage'; 
-import {About} from './pages/AboutPage';
+import {AboutPage} from './pages/AboutPage';
 
 import './App.scss'
 
@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route path={"/"} element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path={`/about`} element={<About />} />
+          <Route path={`/about`} element={<AboutPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

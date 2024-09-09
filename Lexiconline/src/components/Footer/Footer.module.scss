@@ -1,6 +1,6 @@
 @import '../../assets/helper/Helper.scss';
 
-footer{
+footer {
     margin-top: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -9,18 +9,33 @@ footer{
     padding: 1rem;
     gap: 2rem;
     text-align: center;
-    div{
-        li{
+
+    div {
+        li {
             list-style: none;
+        }
+
+        img {
+            border: solid 1px #BDAAE1;
+            background-color: #BDAAE1;
+            border-width: 0.5rem;
+            border-radius: 50%;
+            filter: invert(100%); // Make the icon white
+        }
+        .footerLogoText {
+            list-style: none;
+            font-family: Marck Script;
+
         }
     }
 }
 
-@media only screen and (max-width: 600px){
-    footer{
+@media only screen and (max-width: 600px) {
+    footer {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        p{
+
+        p {
             font-size: 12px;
             padding: 0.5rem 0;
         }

@@ -10,7 +10,8 @@ export const Search = () => {
         setSearchWord(e.target.value);
     };
 
-    const handleSearch = () => {
+    const handleSearch = (e) => {
+        e.preventDefault();  // Prevents page reload on form submission
         setSubmittedWord(searchWord);
     };
 
@@ -18,15 +19,15 @@ export const Search = () => {
         <>
             <div className={style.searchContainer}>
                 <h3>Enter a word to search for</h3>
-                <div className={style.searchStyle}>
+                <form onSubmit={handleSearch} className={style.searchStyle}>
                     <input
                         type="text"
                         value={searchWord}
                         onChange={handleInputChange}
                         placeholder="Type a word..."
                     />
-                    <button onClick={handleSearch}>Search</button>
-                </div>
+                    <button type="submit">Search</button>
+                </form>
             </div>
 
             {/* Render Fetch component with the search word */}

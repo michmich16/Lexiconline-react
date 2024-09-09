@@ -20,7 +20,8 @@ export const Footer = () => {
                 <li>For the awesome API</li>
             </div>
             <div>
-                <li>LOGO</li>
+                <li><img width="30" height="30" src="https://img.icons8.com/parakeet-line/48/book.png" alt="book" /></li>
+                <li className={style.footerLogoText}>Lexiconline</li>
             </div>
         </footer>
 

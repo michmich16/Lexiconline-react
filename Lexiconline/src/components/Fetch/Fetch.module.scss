@@ -8,6 +8,7 @@
     margin: auto;
     filter: drop-shadow(0 0 0.2rem rgb(207, 207, 207));
     margin-bottom: 5rem;
+    font-family: Karma;
 
     .dictionaryStyle {
         border-bottom: solid 1px black;
@@ -21,6 +22,16 @@
 
         div {
             padding: 2rem 0;
+            h4{
+                color: $green;
+                font-size: 20px;
+                text-transform: capitalize;
+            }
+
+            h5{
+                color: black;
+                text-decoration: underline;
+            }
         }
     }
 
@@ -32,6 +43,7 @@
         font-family: Karma;
         font-weight: 200;
         color: $green;
+        text-transform: capitalize;
     }
 
     .apiNotFound {

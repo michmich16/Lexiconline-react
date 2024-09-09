@@ -17,7 +17,6 @@ export const MainLayout = () =>{
 
     return(
         <>
-        <Navigation/>
         <Header/>
         <Outlet />
         <Footer/>

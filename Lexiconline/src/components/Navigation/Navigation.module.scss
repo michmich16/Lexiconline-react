@@ -1,19 +1,22 @@
 @import '../../assets/helper/Helper.scss';
 
-nav{
+nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: $green;
     font-family: Karla;
-    ul{
+
+    ul {
         display: flex;
         justify-content: center;
-        li{
+
+        li {
             list-style: none;
             padding: 1rem 2rem;
+            width: 3rem;
 
-            a{
+            a {
                 text-decoration: none;
                 color: $white;
             }
@@ -21,11 +24,27 @@ nav{
     }
 }
 
-// div{
-//     display: flex;
-//     justify-content: center;
-//     img{
-//         display: block;
-        
-//     }
-// }
+.navLogo {
+    display: flex;
+    justify-content: center;    // Centers the content horizontally
+    align-items: center;        // Centers the content vertically inside the div
+    margin: -6rem auto;          // Center the logo horizontally on the page with auto margins
+    border: solid 1px $green;
+    background-color: $green;
+    border-width: 3rem;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+
+    img {
+        margin-top: 5rem;
+        width: 45%;
+        height: 45%;
+        border: solid 1px #BDAAE1;
+        background-color: #BDAAE1;
+        border-width: 0.5rem;
+        border-radius: 50%;
+        filter: invert(100%);    // Make the icon white
+    }
+}
+

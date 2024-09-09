@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import { Search } from "../components/Search/Search";
-import { Fetch } from "../components/Fetch/Fetch";
+import { About } from "../components/About/About";
 
 
-export function About() {
+
+export function AboutPage() {
 
   return (
-  <>
-
-  </>
+    <>
+      <About />
+    </>
   );
 }
