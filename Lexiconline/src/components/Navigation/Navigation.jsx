@@ -16,7 +16,7 @@ export const Navigation = () => {
                 <ul>
                     <li><NavLink to={'/'}>Home</NavLink></li>
                     <li><NavLink to={'/about'}>About</NavLink></li>
-                    <li><NavLink to={'#'}>API</NavLink></li>
+                    <li><NavLink to={'https://dictionaryapi.dev/'}>API</NavLink></li>
                 </ul>
             </nav>
             <div className={style.navLogo}>
