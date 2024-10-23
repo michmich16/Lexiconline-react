@@ -1,7 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Marck+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Karma:wght@300;400;500;600;700&family=Marck+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Karla:ital,wght@0,200..800;1,200..800&family=Karma:wght@300;400;500;600;700&display=swap');
 
+@font-face {
+    font-family: 'Marck Script';
+    src: url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Karla';
+    src: url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800&display=swap');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Karma';
+    src: url('https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500;600;700&display=swap');
+    font-display: swap;
+  }
+  
 $dark-grey:#5A5A5A;
 $pearl:#F4F4F4;
 $green:#435F1C;
