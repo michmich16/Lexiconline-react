@@ -5,9 +5,8 @@ export const Header = () =>{
 
     return(
         <header>
-            <Navigation/>
+                        <Navigation/>
             <div><h1>Lexiconline</h1></div>
-            
         </header>
     )
 }
