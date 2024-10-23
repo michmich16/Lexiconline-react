@@ -18,9 +18,6 @@ function App() {
   return (
     <>
       <HelmetProvider>
-        <Helmet>
-          <title>Lexiconline by Michael P</title>
-        </Helmet>
           <BrowserRouter>
             <Routes>
               <Route path={"/"} element={<MainLayout />}>

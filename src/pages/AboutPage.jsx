@@ -7,7 +7,6 @@ export function AboutPage() {
 
   return (
     <>
-      <HelmetProvider>
         <Helmet>
         <title>Lexiconline - About</title> 
             <meta name='description' content='Online Dictionary provided for you by Michmich16. Contains more than 1 million words' />
@@ -19,7 +18,6 @@ export function AboutPage() {
             <meta property="og:locale" content="en_GB" />
         </Helmet>
       <About />
-      </HelmetProvider>
     </>
   );
 }

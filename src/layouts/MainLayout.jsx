@@ -18,11 +18,9 @@ export const MainLayout = () => {
 
   return (
     <>
-      <HelmetProvider>
         <Header />
         <Outlet />
         <Footer />
-      </HelmetProvider>
     </>
   );
 };

@@ -8,7 +8,6 @@ export function Home() {
 
   return (
     <>
-      <HelmetProvider>
         <Helmet>
         <title>Lexiconline - Home</title> 
             <meta name='description' content='Online Dictionary provided for you by Michmich16. Contains more than 1 million words' />
@@ -21,7 +20,6 @@ export function Home() {
         </Helmet>
       <Search />
       <Fetch />
-      </HelmetProvider>
     </>
   );
 }
