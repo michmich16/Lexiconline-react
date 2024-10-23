@@ -4,9 +4,9 @@ import style from './Header.module.scss'
 export const Header = () => {
 
     return (
-        <header>
+        <header className={style.headerStyle}>
             <Navigation />
-            <div><h1>Lexiconline</h1></div>
+            <div className={style.headerLogoStyle}><h1 className={style.headerName}>Lexiconline</h1></div>
         </header>
     )
 }
