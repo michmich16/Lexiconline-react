@@ -1,11 +1,11 @@
 import { Navigation } from "../Navigation/Navigation";
 import style from './Header.module.scss'
 
-export const Header = () =>{
+export const Header = () => {
 
-    return(
+    return (
         <header>
-                        <Navigation/>
+            <Navigation />
             <div><h1>Lexiconline</h1></div>
         </header>
     )

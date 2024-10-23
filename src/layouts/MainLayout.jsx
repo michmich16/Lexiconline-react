@@ -4,22 +4,31 @@ import { useEffect } from "react";
 import { Navigation } from '../components/Navigation/Navigation';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-export const MainLayout = () =>{
+export const MainLayout = () => {
 
-    const location = useLocation();
+  const location = useLocation();
 
-    // Effekt der opdaterer vores page title når location skifter
-    useEffect(() => {
-      // Vi "slicer" det første tegn væk som er en skråstreg ("/").
-      document.title = location.pathname.slice(1);
-    }, [location]);
+  // Effekt der opdaterer vores page title når location skifter
+  useEffect(() => {
+    // Vi "slicer" det første tegn væk som er en skråstreg ("/").
+    document.title = location.pathname.slice(1);
+  }, [location]);
 
-    return(
-        <>
-        <Header/>
-        <Outlet />
-        <Footer/>
-        </>
-    );
+  return (
+    <>
+      <HelmetProvider>
+        <Helmet>
+          <title>About Lexiconline</title>
+          <meta name='description' content='Online Dicktionary provided for you by Michmich16. Contains more than 1 million words' />
+          <meta name="keywords" content="Dictionary, Search, Meaning, English" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </Helmet>
+      </HelmetProvider>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  );
 };
