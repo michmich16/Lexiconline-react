@@ -18,7 +18,7 @@ export const Search = () => {
     return (
         <>
             <div className={style.searchContainer}>
-                <h3>Enter a word to search for</h3>
+                <h2>Enter a word to search for</h2>
                 <form onSubmit={handleSearch} className={style.searchStyle}>
                     <input
                         type="text"
