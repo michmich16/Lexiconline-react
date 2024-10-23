@@ -9,6 +9,7 @@ export function AboutPage() {
     <>
       <HelmetProvider>
         <Helmet>
+        <title>Lexiconline - About</title> 
             <meta name='description' content='Online Dictionary provided for you by Michmich16. Contains more than 1 million words' />
             <meta name="keywords" content="Dictionary, Search, Meaning, English" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
