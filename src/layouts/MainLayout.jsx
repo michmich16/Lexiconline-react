@@ -21,7 +21,7 @@ export const MainLayout = () => {
       <HelmetProvider>
         <Helmet>
           <title>Lexiconline</title>
-          <meta name='description' content='Online Dicktionary provided for you by Michmich16. Contains more than 1 million words' />
+          <meta name='description' content='Online Dictionary provided for you by Michmich16. Contains more than 1 million words' />
           <meta name="keywords" content="Dictionary, Search, Meaning, English" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta property='og:title' content='Lexiconline' />
