@@ -18,14 +18,17 @@ function App() {
   return (
     <>
       <HelmetProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path={"/"} element={<MainLayout />}>
-              <Route index element={<Home />} />
-              <Route path={`/about`} element={<AboutPage />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
+        <Helmet>
+          <title>Lexiconline by Michael P</title>
+          <BrowserRouter>
+            <Routes>
+              <Route path={"/"} element={<MainLayout />}>
+                <Route index element={<Home />} />
+                <Route path={`/about`} element={<AboutPage />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </Helmet>
       </HelmetProvider>
     </>
   )
