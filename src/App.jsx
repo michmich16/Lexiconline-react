@@ -9,17 +9,13 @@ import { Fetch } from './components/Fetch/Fetch';
 import { Home } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import ReactGA from "react-ga4";
+
 
 import './App.scss'
 
 function App() {
 
-  ReactGA.initialize([
-    {
-      trackingId: "G-BYBXV174FB",
-    },
-  ]);
+
 
   return (
     <>

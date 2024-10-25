@@ -1,10 +1,9 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import style from './MainLayout.module.scss'
 import { useEffect } from "react";
-import { Navigation } from '../components/Navigation/Navigation';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Cookies } from "../components/Cookies/Cookies";
 
 export const MainLayout = () => {
 
@@ -16,11 +15,13 @@ export const MainLayout = () => {
     document.title = location.pathname.slice(1);
   }, [location]);
 
+
   return (
     <>
-        <Header />
-        <Outlet />
-        <Footer />
+      <Cookies />
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   );
 };

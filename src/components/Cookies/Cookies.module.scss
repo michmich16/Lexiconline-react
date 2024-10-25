@@ -1,0 +1,41 @@
+.noScroll {
+    overflow: hidden;
+}
+
+.modal{
+    height: 100%;
+}
+
+.Cookie_button_accepted {
+    border-radius: 0.4rem;
+    font-size: 2rem;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: #eee;
+    background-color: rgb(34, 39, 187);
+    font-weight: bold;
+    transition: 600ms;
+}
+
+.Cookie_button_accepted:hover {
+    background-color: rgb(8, 14, 179);
+    transition: 400ms;
+}
+
+.Cookie_button_rejected {
+    border-radius: 0.4rem;
+    font-size: 2rem;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: #eee;
+    background-color: rgb(27, 104, 192);
+    font-weight: bold;
+    transition: 600ms;
+}
+
+.Cookie_button_rejected:hover {
+    background-color: rgb(0, 90, 192);
+    transition: 400ms;
+}
